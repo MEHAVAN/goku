@@ -16,39 +16,43 @@
         }
         .login-container {
             background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
-        .login-container h2 {
+        h2 {
             text-align: center;
             margin-bottom: 20px;
         }
-        .login-container input {
+        input[type="text"],
+        input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
-        .login-container button {
+        button {
             width: 100%;
             padding: 10px;
             background-color: #4CAF50;
-            border: none;
             color: white;
-            font-size: 16px;
-            border-radius: 4px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
-        .login-container button:hover {
+        button:hover {
             background-color: #45a049;
         }
-        .error-message {
-            color: red;
+        .forgot-password {
             text-align: center;
-            font-size: 14px;
+            margin-top: 10px;
+        }
+        .forgot-password a {
+            text-decoration: none;
+            color: #007BFF;
         }
     </style>
 </head>
@@ -56,5 +60,15 @@
 
     <div class="login-container">
         <h2>Login</h2>
-        <form id="loginForm">
-            <input type="text" id
+        <form action="/submit-login" method="POST">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+
+</body>
+</html>
